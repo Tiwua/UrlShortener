@@ -25,6 +25,6 @@ namespace UrlShortener.Models
 
         public DateTime CreatedAt { get; set; }
 
-        public List<UrlAccessLog> AccessLogs { get; set; } 
+        public virtual List<UrlAccessLog> AccessLogs { get; set; } 
     }
 }

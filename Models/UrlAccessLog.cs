@@ -13,7 +13,7 @@ namespace UrlShortener.Models
         public Guid Id { get; set; }
 
         [Required]
-        public string ShortenedUrlId { get; set; } = null!;
+        public Guid ShortenedUrlId { get; set; }
         public ShortenedUrl ShortenedUrl { get; set; } = null!;
 
         [Required]

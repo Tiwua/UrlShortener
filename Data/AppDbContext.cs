@@ -16,6 +16,7 @@ namespace UrlShortener.Data
                 .HasMany(s => s.AccessLogs)
                 .WithOne(a => a.ShortenedUrl)
                 .HasForeignKey(a => a.ShortenedUrlId);
+
             base.OnModelCreating(modelBuilder);
         }
     }

@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Stats";
+}
+
+<h2>Stats for URL:</h2>
+<p>@ViewBag.OriginalUrl</p>
+
+<h3>Unique Visits Per Day:</h3>
+<table border="1">
+    <tr>
+        <th>Date</th>
+        <th>Unique Visitors</th>
+    </tr>
+    @foreach (var item in ViewBag.UniqueVisitsPerDay)
+    {
+        <tr>
+            <td>@item.Date.ToShortDateString()</td>
+            <td>@item.UniqueVisitors</td>
+        </tr>
+    }
+</table>
+
+<h3>Top 10 IPs By Visit Count:</h3>
+<table border="1">
+    <tr>
+        <th>IP Address</th>
+        <th>Visit Count</th>
+    </tr>
+    @foreach (var item in ViewBag.TopIps)
+    {
+        <tr>
+            <td>@item.IpAddress</td>
+            <td>@item.VisitCount</td>
+        </tr>
+    }
+</table>

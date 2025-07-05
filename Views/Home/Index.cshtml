@@ -1,8 +1,48 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "URL Shortener";
+
+
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<h2>URL Shortener</h2>
+
+<div style="display: flex; gap: 40px; align-items: flex-start;">
+    <form method="post" asp-action="Shorten">
+        <div>
+            <label for="originalUrl">Enter URL to shorten:</label><br />
+            <input type="url" id="originalUrl" name="originalUrl" style="width: 400px;" required />
+        </div>
+        <br />
+        <button type="submit">Shorten</button>
+    </form>
+
+    <form method="get" asp-action="Stats">
+        <div>
+            <label for="secretUrl">Enter Secret URL:</label><br />
+            <input type="url" id="secretId" name="secretId" style="width: 400px;" required />
+        </div>
+        <br />
+        <button type="submit">Show</button>
+    </form>
 </div>
+
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div style="color:red;">
+        <ul>
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <li>@error.ErrorMessage</li>
+            }
+        </ul>
+    </div>
+}
+
+@if (ViewBag.ShortenedUrl != null)
+{
+    <div style="margin-top:20px;">
+        <p>Shortened URL: <a href="@ViewBag.ShortenedUrl" target="_blank">@ViewBag.ShortenedUrl</a></p>
+        <p>Secret Stats URL: <a href="@ViewBag.SecretStatsUrl" target="_blank">@ViewBag.SecretStatsUrl</a></p>
+    </div>
+}

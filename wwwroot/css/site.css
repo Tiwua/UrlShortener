@@ -20,3 +20,8 @@ html {
 body {
   margin-bottom: 60px;
 }
+form {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+}

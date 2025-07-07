@@ -18,6 +18,7 @@ The app allows users to:
   - Unique visits per day (each IP counted once per day).
   - Top 10 IP addresses by visit count.
 - Mock data is seeded automatically on first run.
+- SecretUrl is not hidden in the app for testing purposes
 
 ---
 
@@ -40,3 +41,8 @@ The app allows users to:
     -On first run:
     -The app will automatically apply database migrations.
     -Mock data will be seeded automatically if no records exist.
+
+## ✅ Mock Data
+https://example.com/very-long-url
+ShortCode = abc123
+SecretUrl = https://example.com/very-long-urladvlsmvpsjafo0i=w[vtwev8254vsd62f1

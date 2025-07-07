@@ -25,7 +25,7 @@ The app allows users to:
 - ASP.NET Core MVC
 - Entity Framework Core
 - SQL Server
-- Bootstrap (optional for styling)
+- Bootstrap
 
 ---
 

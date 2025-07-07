@@ -36,7 +36,7 @@ The app allows users to:
 1. Download or clone this repository to your computer
 2. Open the Solution
 3. Set Up the Database Connection
-4. Run the App
+4. Run the App in http mode
 5. Database Initialization
     -On first run:
     -The app will automatically apply database migrations.
